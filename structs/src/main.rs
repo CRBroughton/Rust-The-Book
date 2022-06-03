@@ -4,6 +4,12 @@ struct User {
     email: String,
     sign_in_count: u64,
 }
+
 fn main() {
-    println!("Hello, world!");
+    let user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someonename123"),
+        active: true,
+        sign_in_count: 1,
+    };
 }
