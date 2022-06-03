@@ -3,6 +3,13 @@ enum IpAddrKind {
     V6(String)
 }
 
+enum Message {
+    Quit,
+    Move { x: i32, y: i32},
+    Write(String),
+    ChangeColor(i32, i32, i32)
+}
+
 struct IpAddr {
     kind: IpAddrKind,
     address: String
