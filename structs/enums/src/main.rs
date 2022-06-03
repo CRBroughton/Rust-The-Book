@@ -22,7 +22,12 @@ struct IpAddr {
 }
 
 fn main() {
-    let localhost = IpAddrKind::V4(127, 0, 0, 1);
+    // let localhost = IpAddrKind::V4(127, 0, 0, 1);
+
+    let x = 5;
+    let y: Option<i32> = None;
+
+    let sum = x + y.unwrap_or(0);
 }
 
 fn route(ip_kind: IpAddrKind) {}
