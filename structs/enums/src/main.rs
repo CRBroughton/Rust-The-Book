@@ -1,5 +1,5 @@
 enum IpAddrKind {
-    V4(String),
+    V4(u8, u8, u8, u8),
     V6(String)
 }
 
@@ -9,7 +9,7 @@ struct IpAddr {
 }
 
 fn main() {
-    let localhost = IpAddrKind::V4(String::from("127.0.0.1"));
+    let localhost = IpAddrKind::V4(127, 0, 0, 1);
 }
 
 fn rout(ip_kind: IpAddrKind) {}
