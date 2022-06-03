@@ -7,4 +7,6 @@ fn main() {
     v.push(3);
 
     let v2 = vec![1, 2, 3];
+    let third = &v2[2];
+    println!("'The third element is {}", third);
 }
