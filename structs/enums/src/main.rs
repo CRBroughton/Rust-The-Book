@@ -10,6 +10,12 @@ enum Message {
     ChangeColor(i32, i32, i32)
 }
 
+impl Message {
+    fn some_function() {
+        println!("Here is a message")
+    }
+}
+
 struct IpAddr {
     kind: IpAddrKind,
     address: String
@@ -19,4 +25,4 @@ fn main() {
     let localhost = IpAddrKind::V4(127, 0, 0, 1);
 }
 
-fn rout(ip_kind: IpAddrKind) {}
+fn route(ip_kind: IpAddrKind) {}
