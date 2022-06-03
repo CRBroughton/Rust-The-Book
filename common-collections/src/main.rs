@@ -15,7 +15,8 @@ fn main() {
         None => println!("This is no third element")
     }
 
-    for i in &v {
+    for i in &mut v {
+        *i += 10;
         println!("{}", i);
     }
 }
