@@ -45,27 +45,45 @@ fn main() {
 
     // Returning values
 
-    let s1 = gives_ownership(); // returns values
+    // let s1 = gives_ownership(); // returns values
 
-    let s2  = String::from("hello");
+    // let s2  = String::from("hello");
 
-    let s3 = takes_and_gives_back(s2);
+    // let s3 = takes_and_gives_back(s2);
 
-    println!("{}", s1);
-    println!("{}", s3);
+    // println!("{}", s1);
+    // println!("{}", s3);
+
+
+
+
+    // Using values without losing ownership
+
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{}' is {}.", s2, len);
 
 }
 
 
-fn gives_ownership() -> String {
-    let some_string = String::from("yours");
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
 
-    some_string // this is a returned value
+    (s, length)
 }
 
-fn takes_and_gives_back(a_string: String) -> String {
-    a_string //this is a returned valued
-}
+
+// fn gives_ownership() -> String {
+//     let some_string = String::from("yours");
+
+//     some_string // this is a returned value
+// }
+
+// fn takes_and_gives_back(a_string: String) -> String {
+//     a_string //this is a returned valued
+// }
 
 
 // fn takes_ownership(the_string: String) {
