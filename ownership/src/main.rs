@@ -14,4 +14,10 @@ fn main() {
     // let s2 = s1;
 
     // println!("{}, world!", s1);
+
+    // Clone example - data gets duplicated on the stack
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+
+    println!("s1 = {}, s2 = {}", s1, s2);
 }
