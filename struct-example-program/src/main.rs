@@ -14,6 +14,15 @@ impl Rectangle {
     }
 }
 
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size
+        }
+    }
+}
+
 fn main() {
     let rect = Rectangle {
         width: 30,
