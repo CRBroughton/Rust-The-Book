@@ -16,8 +16,27 @@ fn main() {
     // println!("{}, world!", s1);
 
     // Clone example - data gets duplicated on the stack
-    let s1 = String::from("hello");
-    let s2 = s1.clone();
+    // let s1 = String::from("hello");
+    // let s2 = s1.clone();
 
-    println!("s1 = {}, s2 = {}", s1, s2);
+    // println!("s1 = {}, s2 = {}", s1, s2);
+
+    // Function example with variables and out of scope behaviour
+    let s = String::from("hello");
+
+    takes_ownership(s);
+
+    let x = 5;
+
+    makes_copy(x);
+
+}
+
+
+fn takes_ownership(the_string: String) {
+    println!("{}", the_string);
+}
+
+fn makes_copy(the_int: i32) {
+    println!("{}", the_int);
 }
