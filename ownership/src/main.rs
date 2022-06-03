@@ -6,7 +6,10 @@ fn main() {
 
     // s.push_str(", world!");
 
-    // println!("{}", s)
+    // println!("{}", s);
+
+
+
 
 
     // Double free error example
@@ -15,28 +18,60 @@ fn main() {
 
     // println!("{}, world!", s1);
 
+
+
+
+
     // Clone example - data gets duplicated on the stack
     // let s1 = String::from("hello");
     // let s2 = s1.clone();
 
     // println!("s1 = {}, s2 = {}", s1, s2);
 
+
+
+
+
     // Function example with variables and out of scope behaviour
-    let s = String::from("hello");
+    // let s = String::from("hello");
 
-    takes_ownership(s);
+    // takes_ownership(s);
 
-    let x = 5;
+    // let x = 5;
 
-    makes_copy(x);
+    // makes_copy(x);
+
+
+
+    // Returning values
+
+    let s1 = gives_ownership(); // returns values
+
+    let s2  = String::from("hello");
+
+    let s3 = takes_and_gives_back(s2);
+
+    println!("{}", s1);
+    println!("{}", s3);
 
 }
 
 
-fn takes_ownership(the_string: String) {
-    println!("{}", the_string);
+fn gives_ownership() -> String {
+    let some_string = String::from("yours");
+
+    some_string // this is a returned value
 }
 
-fn makes_copy(the_int: i32) {
-    println!("{}", the_int);
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string //this is a returned valued
 }
+
+
+// fn takes_ownership(the_string: String) {
+//     println!("{}", the_string);
+// }
+
+// fn makes_copy(the_int: i32) {
+//     println!("{}", the_int);
+// }
