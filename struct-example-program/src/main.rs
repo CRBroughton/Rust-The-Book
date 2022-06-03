@@ -39,6 +39,8 @@ fn main() {
         height: 50
     };
 
+    let rect3 = Rectangle::square(3);
+
     println!("rect can hold rect1: {}", rect.can_hold(&rect1));
     println!("rect can hold rect2: {}", rect.can_hold(&rect2));
 
