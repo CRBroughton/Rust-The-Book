@@ -20,6 +20,20 @@ fn main() {
         height: 50,
     };
 
+    let rect1 = Rectangle {
+        width: 20,
+        height: 40,
+    };
+
+    let rect2 = Rectangle {
+        width: 40,
+        height: 50
+    };
+
+    println!("rect can hold rect1: {}", rect.can_hold(&rect1));
+    println!("rect can hold rect2: {}", rect.can_hold(&rect2));
+
+
     println!("rect: {:#?}", rect);
 
     println!(
