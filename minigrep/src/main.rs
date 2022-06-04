@@ -10,6 +10,7 @@ fn main() {
     println!("Searching for {}", query);
     println!("In file {}", filename);
 
-    let contents = fs::read_to_string(filename);
+    let contents = fs::read_to_string(filename)
+        .expect("Something went wrong reading the file");
 
 }
