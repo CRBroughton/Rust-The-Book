@@ -27,5 +27,6 @@ mod tests {
         };
 
         assert!(larger.can_hold(&smaller));
+        assert!(!smaller.can_hold(&larger));
     }
 }
