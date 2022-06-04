@@ -4,6 +4,12 @@ fn main() {
     let largest = get_largest(number_list);
 
     println!("The latest number is {}", largest);
+
+    let char_list = vec!['y', 'z', 'a', 'b', 'c', 'd', 'e', 'f'];
+
+    let largest = get_largest(char_list);
+
+    println!("The latest number is {}", largest);
 }
 
 fn get_largest(number_list: Vec<i32>) -> i32 {
