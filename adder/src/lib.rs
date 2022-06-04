@@ -1,4 +1,3 @@
-#[cfg(test)]
 
 #[derive(Debug)]
 struct Rectangle {
@@ -11,17 +10,20 @@ impl Rectangle {
         self.width == other.width && self.height == other.height
     }
 }
-
+#[cfg(test)]
 mod tests {
-    use core::panic;
+    use super::*;
 
     #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-    #[test]
-    fn failing_test() {
-        panic!("Failing test");
+    fn larger_can_hold_smaller() {
+        let larger = Rectangle {
+            width: 8,
+            height: 7
+        };
+
+        let smaller = Rectangle {
+            width: 5,
+            height:1
+        };
     }
 }
