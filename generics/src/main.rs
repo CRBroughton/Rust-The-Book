@@ -12,7 +12,7 @@ fn main() {
     println!("The latest number is {}", largest);
 }
 
-fn get_largest(number_list: Vec<i32>) -> i32 {
+fn get_largest<T: PartialOrd + Copy>(number_list: Vec<T>) -> T {
     let mut largest = number_list[0];
     for number in number_list {
         if number > largest {
