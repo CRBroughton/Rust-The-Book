@@ -25,5 +25,7 @@ mod tests {
             width: 5,
             height:1
         };
+
+        assert!(larger.can_hold(&smaller));
     }
 }
