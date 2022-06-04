@@ -57,4 +57,6 @@ fn main() {
 
     println!("Tweet summary: {}", tweet.summarize());
     println!("Article summary: {}", article.summarize());
+
+    notify(&article);
 }
