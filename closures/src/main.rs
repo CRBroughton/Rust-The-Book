@@ -1,32 +1,35 @@
+use std::collections::HashMap;
 use std::thread;
+use std::hash::Hash;
 use std::time::Duration;
 
-struct Cacher<T, U>
+struct Cacher<T, K, V>
 where
-    T: Fn(U) -> U,
+    T: Fn(K) -> V,
 {
     calculation: T,
-    value: Option<U>,
+    values: HashMap<K, V>
 }
 
-impl<T, U> Cacher<T, U>
+impl<T, K, V> Cacher<T, K, V>
 where
-    T: Fn(U) -> U,
-    U: Copy
+    T: Fn(K) -> V,
+    K: Hash + Eq + Clone + Copy,
+    V: Copy
 {
-    fn new(calculation: T) -> Cacher<T, U> {
+    fn new(calculation: T) -> Cacher<T, K, V> {
         Cacher {
             calculation,
-            value: None,
+            values: HashMap::new(),
         }
     }
 
-    fn value(&mut self, arg: U) -> U {
-        match self.value {
-            Some(v) => v,
+    fn value(&mut self, arg: K) -> V {
+        match self.values.get(&arg) {
+            Some(v) => *v,
             None => {
                 let v = (self.calculation)(arg);
-                self.value = Some(v);
+                self.values.insert(arg, v);
                 v
             }
         }
