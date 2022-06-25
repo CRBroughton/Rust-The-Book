@@ -1,26 +1,27 @@
 use std::thread;
 use std::time::Duration;
 
-struct Cacher<T>
+struct Cacher<T, U>
 where
-    T: Fn(u32) -> u32,
+    T: Fn(U) -> U,
 {
     calculation: T,
-    value: Option<u32>,
+    value: Option<U>,
 }
 
-impl<T> Cacher<T>
+impl<T, U> Cacher<T, U>
 where
-    T: Fn(u32) -> u32,
+    T: Fn(U) -> U,
+    U: Copy
 {
-    fn new(calculation: T) -> Cacher<T> {
+    fn new(calculation: T) -> Cacher<T, U> {
         Cacher {
             calculation,
             value: None,
         }
     }
 
-    fn value(&mut self, arg: u32) -> u32 {
+    fn value(&mut self, arg: U) -> U {
         match self.value {
             Some(v) => v,
             None => {
