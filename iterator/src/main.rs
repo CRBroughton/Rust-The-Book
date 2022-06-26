@@ -6,6 +6,9 @@ fn main() {
     for value in v1_iter {
         println!("{}", value);
     }
+
+
+    let v2: Vec<_> = v1.iter().map(|x| x + 1).collect();
 }
 
 #[test]
