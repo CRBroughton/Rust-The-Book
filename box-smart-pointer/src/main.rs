@@ -1,3 +1,8 @@
+enum List {
+    Const(i32, List),
+    Nil,
+}
+
 fn main() {
     let b = Box::new(5);
 
