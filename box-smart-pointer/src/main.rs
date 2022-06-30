@@ -3,6 +3,8 @@ enum List {
     Nil,
 }
 
+use List::{Const, Nil};
+
 fn main() {
     let b = Box::new(5);
 
