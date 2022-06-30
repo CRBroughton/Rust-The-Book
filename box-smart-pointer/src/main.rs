@@ -6,5 +6,5 @@ enum List {
 use List::{Cons, Nil};
 
 fn main() {
-    let List = Cons(1, Cons(2, Cons(3, Nil)));
+    let List = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
 }
