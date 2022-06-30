@@ -1,9 +1,9 @@
 enum List {
-    Const(i32, List),
+    Cons(i32, List),
     Nil,
 }
 
-use List::{Const, Nil};
+use List::{Cons, Nil};
 
 fn main() {
     let b = Box::new(5);
