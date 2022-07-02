@@ -1,3 +1,5 @@
+use std::ops::Deref;
+
 struct MyBox<T>(T);
 
 impl<T> MyBox<T> {
