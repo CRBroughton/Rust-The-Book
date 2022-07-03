@@ -6,5 +6,8 @@ enum List {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let a = Cons(5, Box::new(Cons(10, Box::new(Nil))));
+    let b = Cons(3, Box::new(a));
+    let b = Cons(4, Box::new(a));
+
 }
