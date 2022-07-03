@@ -1,7 +1,8 @@
 use crate::List::{Cons, Nil};
+use std::rc::Rc;
 
 enum List {
-    Cons(i32, Box<List>),
+    Cons(i32, Rc<List>),
     Nil,
 }
 
