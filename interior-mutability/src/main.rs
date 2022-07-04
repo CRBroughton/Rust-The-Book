@@ -34,11 +34,6 @@ impl<'a, T> LimitTracker<'a, T>
     }
 }
 
-fn main() {
-    let x = 5;
-    let y = &mut x;
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
