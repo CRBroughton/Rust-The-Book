@@ -42,6 +42,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::cell::RefCell;
 
     struct MockMessenger {
         sent_messages: Vec<String>,
