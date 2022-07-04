@@ -8,6 +8,18 @@ pub struct LimitTracker<'a, T: Messenger> {
     max: usize,
 }
 
+impl<'a, T> LimitTracker<'a, T>
+    where T: Messenger,
+{
+    pub fn new(messenger: &'a T, max: usize) -> LimitTracker<'a, T> {
+        LimitTracker {
+            messenger,
+            value: 0,
+            max,
+        }
+    }
+}
+
 fn main() {
     let x = 5;
     let y = &mut x;
