@@ -61,6 +61,8 @@ fn main() {
         children: RefCell::new(vec![]),
     });
 
+    println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
+
     let branch = Rc::new(Node {
         value: 5,
         parent: RefCell::new(Weak::new()),
