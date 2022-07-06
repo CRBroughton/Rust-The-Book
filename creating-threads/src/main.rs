@@ -8,6 +8,8 @@ fn main() {
         }
     });
 
+    // handle.join().unwrap(); - here for spawn thread to start first
+
     for i in 1..5 {
         println!("Hi number {} from the main thread!", i);
         thread::sleep(Duration::from_millis(1));
