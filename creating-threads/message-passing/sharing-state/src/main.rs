@@ -1,3 +1,5 @@
+use std::sync::Mutex;
+
 fn main() {
-    println!("Hello, world!");
+    let m = Mutex::new(5);
 }
